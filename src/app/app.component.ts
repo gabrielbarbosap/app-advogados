@@ -4,7 +4,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { UserSubService } from './table-subject';
 import * as mock from './mock.json'
-import * as mockall from './mock.json'
+import * as mockall from './mockall.json'
 
 @Component({
   selector: 'app-root',
@@ -14,8 +14,8 @@ import * as mockall from './mock.json'
 
 export class AppComponent implements OnInit {
   tableList = [];
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'proff'];
-  displayedColumnsLL: string[] = ['position', 'name', 'weight', 'symbol', 'proff'];
+  displayedColumns: string[] = ['position', 'symbol', 'proff', 'name', 'weight'];
+  displayedColumnsLL: string[] = ['position', 'symbol', 'proff', 'name', 'weight'];
 
   dataSource;
   dataSourceall;
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.all()
-    this.mockall()
+    this.mockallmet()
   }
 
   closePanel() {
@@ -42,9 +42,9 @@ export class AppComponent implements OnInit {
     this.getPlacas(mock.resultset);
   }
 
-  mockall() {
+  mockallmet() {
     console.log(mockall.resultset)
-    this.getPlacas(mockall.resultset);
+    this.getall(mockall.resultset);
   }
 
   professor() {

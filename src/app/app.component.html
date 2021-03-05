@@ -54,6 +54,17 @@
                     <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Nome </th>
+                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="proff">
+                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
+                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
+                </ng-container>
+
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> CPF </th>
@@ -66,16 +77,6 @@
                     <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
                 </ng-container>
 
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Nome </th>
-                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="proff">
-                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
-                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
-                </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -96,6 +97,17 @@
                     <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Nome </th>
+                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="proff">
+                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
+                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
+                </ng-container>
+
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                     <th mat-header-cell *matHeaderCellDef> CPF </th>
@@ -106,17 +118,6 @@
                 <ng-container matColumnDef="weight">
                     <th mat-header-cell *matHeaderCellDef> Registro </th>
                     <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
-                </ng-container>
-
-                <!-- Symbol Column -->
-                <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Nome </th>
-                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="proff">
-                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
-                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumnsLL"></tr>
