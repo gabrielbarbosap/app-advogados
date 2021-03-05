@@ -39,6 +39,94 @@
 
 </mat-accordion> -->
 
+<mat-tab-group>
+    <mat-tab label="Professores">
+        <div>
+
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> Filiação </th>
+                    <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> CPF </th>
+                    <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Registro </th>
+                    <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Nome </th>
+                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="proff">
+                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
+                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-tab>
+    <mat-tab label="Geral">
+        <div>
+
+            <table mat-table [dataSource]="dataSourceall" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+                      The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> Filiação </th>
+                    <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> CPF </th>
+                    <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="weight">
+                    <th mat-header-cell *matHeaderCellDef> Registro </th>
+                    <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="symbol">
+                    <th mat-header-cell *matHeaderCellDef> Nome </th>
+                    <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="proff">
+                    <th mat-header-cell *matHeaderCellDef> Profissão </th>
+                    <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsLL"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsLL;"></tr>
+            </table>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+
 <div>
 
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -48,26 +136,31 @@
 
         <!-- Position Column -->
         <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <th mat-header-cell *matHeaderCellDef> Filiação </th>
             <td mat-cell *matCellDef="let element"> {{element[0]}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <th mat-header-cell *matHeaderCellDef> CPF </th>
             <td mat-cell *matCellDef="let element"> {{element[1]}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="weight">
-            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <th mat-header-cell *matHeaderCellDef> Registro </th>
             <td mat-cell *matCellDef="let element"> {{element[2]}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="symbol">
-            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <th mat-header-cell *matHeaderCellDef> Nome </th>
             <td mat-cell *matCellDef="let element"> {{element[3]}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="proff">
+            <th mat-header-cell *matHeaderCellDef> Profissão </th>
+            <td mat-cell *matCellDef="let element"> {{element[5]}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
