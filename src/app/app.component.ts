@@ -3,7 +3,7 @@ import { DadosService } from './dados.service';
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { UserSubService } from './table-subject';
-import * as mock from './mockProf.json'
+import * as mock from './mock.json'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
   all() {
     console.log(mock.resultset)
     this.getPlacas(mock.resultset);
-    this.dataService.analistaSaude().subscribe(res => console.log(res))
   }
 
   professor() {
@@ -178,7 +177,7 @@ export class AppComponent implements OnInit {
     })
     duo.slice(0, 10000)
     console.log(duo)
-    mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
+    // mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
     this.dataSource = duo;
   }
 
