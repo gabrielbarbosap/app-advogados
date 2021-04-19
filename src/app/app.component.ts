@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatAccordion } from '@angular/material/expansion';
 import { DadosService } from './dados.service';
+import * as mock from './mock.json';
+// import * as mockall from './mockall.json';
 
 @Component({
   selector: 'app-root',
@@ -36,7 +38,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.all();
-    // this.mockallmet();
+    this.mockallmet();
   }
 
   closePanel() {
@@ -44,14 +46,13 @@ export class AppComponent implements OnInit {
   }
 
   all() {
-    this.dataService.getall().subscribe((res) => {
-      console.log(res);
-      this.mockallmet(res);
-    });
+    console.log(mock.resultset);
+    // this.getPlacas(mock.resultset);
   }
 
-  mockallmet(res) {
-    this.getall(res.resultset);
+  mockallmet() {
+    // console.log(mockall.resultset);
+    this.getall(mock.resultset);
   }
 
   professor() {
@@ -181,7 +182,7 @@ export class AppComponent implements OnInit {
 
     var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1);
     console.log(duplicates);
-    console.log('Comecou etapa 1');
+    console.log('começou');
     const duo = itens.filter((numero) => duplicates.includes(numero[3]));
     duo.sort(function (a, b) {
       if (a[3] > b[3]) {
@@ -193,7 +194,6 @@ export class AppComponent implements OnInit {
       return 0;
     });
     duo.slice(0, 10000);
-    console.log('comecou etapa 2');
     console.log(duo);
     // mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
     this.dataSource = duo;
@@ -226,7 +226,6 @@ export class AppComponent implements OnInit {
       return 0;
     });
     duo.slice(0, 10000);
-    console.log('começando segunda etapa');
     console.log(duo);
     // mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
     this.dataSource = duo;
