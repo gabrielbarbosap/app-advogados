@@ -181,7 +181,7 @@ export class AppComponent implements OnInit {
 
     var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1);
     console.log(duplicates);
-    console.log('começou');
+    console.log('Comecou etapa 1');
     const duo = itens.filter((numero) => duplicates.includes(numero[3]));
     duo.sort(function (a, b) {
       if (a[3] > b[3]) {
@@ -193,6 +193,7 @@ export class AppComponent implements OnInit {
       return 0;
     });
     duo.slice(0, 10000);
+    console.log('comecou etapa 2');
     console.log(duo);
     // mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
     this.dataSource = duo;
