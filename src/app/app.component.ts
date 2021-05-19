@@ -200,34 +200,34 @@ export class AppComponent implements OnInit {
   }
 
   getall(itens) {
-    var uniq = itens
-      .map((name) => {
-        return {
-          count: 1,
-          name: name[3],
-        };
-      })
-      .reduce((a, b) => {
-        a[b.name] = (a[b.name] || 0) + b.count;
-        return a;
-      }, {});
+    // var uniq = itens
+    //   .map((name) => {
+    //     return {
+    //       count: 1,
+    //       name: name[3],
+    //     };
+    //   })
+    //   .reduce((a, b) => {
+    //     a[b.name] = (a[b.name] || 0) + b.count;
+    //     return a;
+    //   }, {});
 
-    var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1);
-    console.log(duplicates);
-    console.log('começou');
-    const duo = itens.filter((numero) => duplicates.includes(numero[3]));
-    duo.sort(function (a, b) {
-      if (a[3] > b[3]) {
-        return 1;
-      }
-      if (a[3] < b[3]) {
-        return -1;
-      }
-      return 0;
-    });
-    duo.slice(0, 10000);
-    console.log(duo);
+    // var duplicates = Object.keys(uniq).filter((a) => uniq[a] > 1);
+    // console.log(duplicates);
+    // console.log('começou');
+    // const duo = itens.filter((numero) => duplicates.includes(numero[3]));
+    // duo.sort(function (a, b) {
+    //   if (a[3] > b[3]) {
+    //     return 1;
+    //   }
+    //   if (a[3] < b[3]) {
+    //     return -1;
+    //   }
+    //   return 0;
+    // });
+    // duo.slice(0, 10000);
+    // console.log(duo);
     // mock.resultset.filter(res => res[2] === '2554348')[0].push('alterado')
-    this.dataSource = duo;
+    this.dataSource = itens;
   }
 }
